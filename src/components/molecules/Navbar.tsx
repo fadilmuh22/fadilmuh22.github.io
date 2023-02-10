@@ -53,7 +53,7 @@ export const Navbar = () => {
 
       <Box
         position={{ sm: 'absolute', md: 'unset' }}
-        top="2.75rem"
+        top="1.25rem"
         right="5.5rem"
       >
         <IconButton
