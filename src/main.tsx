@@ -1,7 +1,7 @@
 import { ChakraProvider } from '@chakra-ui/react';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { createHashRouter, RouterProvider } from 'react-router-dom';
 
 import { MainTemplate } from './components/templates/MainTemplate';
 import { ArticlesPage } from './pages/ArticlesPage';
@@ -19,7 +19,7 @@ const supabaseClient = createClient(
   import.meta.env.VITE_SUPABASE_KEY
 );
 
-export const router = createBrowserRouter([
+export const router = createHashRouter([
   {
     path: '/',
     element: <MainTemplate />,

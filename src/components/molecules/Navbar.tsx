@@ -47,8 +47,8 @@ export const Navbar = () => {
         flexGrow={1}
       >
         <NavbarLink to="/" title="home" onClick={setShow} />
-        <NavbarLink to="/projects" title="projects" onClick={setShow} />
-        <NavbarLink to="/articles" title="articles" onClick={setShow} />
+        <NavbarLink to="projects" title="projects" onClick={setShow} />
+        <NavbarLink to="articles" title="articles" onClick={setShow} />
       </Box>
 
       <Box

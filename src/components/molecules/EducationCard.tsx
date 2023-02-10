@@ -18,8 +18,6 @@ type ExperienceCardProps = {
 export const EducationCard: React.FC<ExperienceCardProps> = ({ education }) => {
   const { colorMode } = useColorMode();
 
-  console.log(education);
-
   return (
     <Box
       paddingX={4}
