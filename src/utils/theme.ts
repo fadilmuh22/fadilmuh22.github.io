@@ -39,7 +39,7 @@ export const myTheme = extendTheme({
         icon: '#2d3748',
         link: '#9f00ff',
         career: {
-          tagBG: '#f7fafc',
+          tagBG: '#82828218',
         },
         skills: {
           border: '#4299e1',
