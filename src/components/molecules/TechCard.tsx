@@ -1,4 +1,11 @@
-import { Box, HStack, Text, useColorModeValue, VStack } from '@chakra-ui/react';
+import {
+  Box,
+  HStack,
+  Text,
+  useColorMode,
+  useColorModeValue,
+  VStack,
+} from '@chakra-ui/react';
 import React from 'react';
 import { TechInterface } from 'src/interfaces/Tech';
 import { MotionBox } from 'src/utils/Motion';
@@ -9,15 +16,17 @@ export const TechCard: React.FC<TechInterface> = ({
   Icon,
   description,
 }) => {
+  const { colorMode } = useColorMode();
+
   return (
     <MotionBox variants={item}>
       <MotionBox whileHover={{ y: -5 }}>
         <HStack
           p={4}
-          bg={useColorModeValue('white', 'gray.800')}
+          bg={`mode.${colorMode}.background`}
           rounded="xl"
           borderWidth="1px"
-          borderColor={useColorModeValue('gray.100', 'gray.700')}
+          borderColor={`mode.${colorMode}.border`}
           w="100%"
           textAlign="left"
           align="start"
@@ -30,9 +39,9 @@ export const TechCard: React.FC<TechInterface> = ({
             position="relative"
             overflow="hidden"
             lineHeight={0}
-            boxShadow="inset 0 0 1px 1px rgba(0, 0, 0, 0.015)"
+            boxShadow="inset 0 0 1px 1px rgba(0, 0, 0, 0.03)"
           >
-            <Icon size={26} color={useColorModeValue('#2D3748', '#fff')} />
+            <Icon size={26} color={useColorModeValue('#2D3748', '#ffffffde')} />
           </Box>
           <VStack
             align="start"
@@ -46,14 +55,11 @@ export const TechCard: React.FC<TechInterface> = ({
                 fontWeight="bold"
                 fontSize="md"
                 noOfLines={2}
-                color={useColorModeValue('gray.500', 'gray.200')}
+                color={`mode.${colorMode}.text`}
               >
                 {name}
               </Text>
-              <Text
-                fontSize="sm"
-                color={useColorModeValue('gray.500', 'gray.200')}
-              >
+              <Text fontSize="sm" color={`mode.${colorMode}.text`}>
                 {description}
               </Text>
             </VStack>

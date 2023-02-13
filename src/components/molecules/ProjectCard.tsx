@@ -6,7 +6,6 @@ import {
   Stack,
   Text,
   useColorMode,
-  useColorModeValue,
 } from '@chakra-ui/react';
 import { formatDistance } from 'date-fns';
 import { ProjectInterface } from 'src/interfaces/Project';
@@ -26,7 +25,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
       _hover={{ shadow: 'md' }}
       borderWidth="1px"
       borderColor={`mode.${colorMode}.border`}
-      bg={useColorModeValue('white', 'gray.800')}
+      bg={`mode.${colorMode}.background`}
       position="relative"
       rounded="md"
     >
@@ -41,10 +40,10 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
             alt={project.name}
           />
           <Stack spacing={2} pl={3}>
-            <Heading fontSize="xl" color={`mode.${colorMode}.career.text`}>
+            <Heading fontSize="xl" color={`mode.${colorMode}.text`}>
               {project.name}
             </Heading>
-            <Heading fontSize="sm" color={`mode.${colorMode}.career.subtext`}>
+            <Heading fontSize="sm" color={`mode.${colorMode}.subtext`}>
               {project.role}
             </Heading>
 
@@ -55,7 +54,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
           </Stack>
         </Flex>
         <Stack>
-          <Text fontSize={14} color={`mode.${colorMode}.career.subtext`}>
+          <Text fontSize={14} color={`mode.${colorMode}.subtext`}>
             {formatDistance(
               new Date(project.start_date),
               new Date(project.end_date)

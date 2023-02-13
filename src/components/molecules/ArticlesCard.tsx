@@ -1,14 +1,4 @@
-import {
-  Box,
-  Heading,
-  Link,
-  Stack,
-  Tag,
-  Text,
-  Tooltip,
-  useColorModeValue,
-} from '@chakra-ui/react';
-import { FaGithub } from 'react-icons/fa';
+import { Box, Heading, Stack, Tag, Text, useColorMode } from '@chakra-ui/react';
 import { FiBookmark } from 'react-icons/fi';
 import { ArticleInterface } from 'src/interfaces/Article';
 
@@ -17,6 +7,8 @@ type ArticleCardProps = {
 };
 
 export const ArticlesCard: React.FC<ArticleCardProps> = ({ article }) => {
+  const { colorMode } = useColorMode();
+
   const openUrl = (url: string) => {
     window.open(url, '_blank');
   };
@@ -38,13 +30,13 @@ export const ArticlesCard: React.FC<ArticleCardProps> = ({ article }) => {
         width="1.5rem"
         height="1.5rem"
         position="absolute"
-        color={useColorModeValue('#2D3748', '#fff')}
-        fill={useColorModeValue('#2D3748', '#fff')}
+        color={`mode.${colorMode}.text`}
+        fill={`mode.${colorMode}.text`}
         right="0.5rem"
         top="-8px"
         marginBottom="1rem"
       />
-      <Heading fontSize="xl" color={useColorModeValue('#2D3748', '#fff')}>
+      <Heading fontSize="xl" color={`mode.${colorMode}.text`}>
         {article.title}
       </Heading>
       <Stack spacing={1} mt={1} isInline alignItems="center">
@@ -53,18 +45,9 @@ export const ArticlesCard: React.FC<ArticleCardProps> = ({ article }) => {
             {tag}
           </Tag>
         ))}
-        <Tooltip label="Source Code" placement="right">
-          <Link
-            href={'https://github.com/fadilmuh22'}
-            isExternal
-            style={{ textDecoration: 'none' }}
-          >
-            <FaGithub color={useColorModeValue('#2D3748', '#fff')} />
-          </Link>
-        </Tooltip>
       </Stack>
-      <Text mt={2} color={useColorModeValue('#2D3748', '#fff')}>
-        {article.description}
+      <Text mt={2} color={`mode.${colorMode}.text`}>
+        {article.description.replace(/\s+/g, ' ').trim()}
       </Text>
     </Box>
   );

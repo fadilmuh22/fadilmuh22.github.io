@@ -6,7 +6,6 @@ import {
   Stack,
   Text,
   useColorMode,
-  useColorModeValue,
 } from '@chakra-ui/react';
 import { formatDistance } from 'date-fns';
 import { ExperienceInterface } from 'src/interfaces/Experience';
@@ -28,7 +27,7 @@ export const ExperienceCard: React.FC<ExperienceCardProps> = ({
       _hover={{ shadow: 'md' }}
       borderWidth="1px"
       borderColor={`mode.${colorMode}.border`}
-      bg={useColorModeValue('white', 'gray.800')}
+      bg={`mode.${colorMode}.background`}
       position="relative"
       rounded="md"
     >
@@ -43,10 +42,10 @@ export const ExperienceCard: React.FC<ExperienceCardProps> = ({
             alt={experience.name}
           />
           <Stack spacing={2} pl={3}>
-            <Heading fontSize="xl" color={`mode.${colorMode}.career.text`}>
+            <Heading fontSize="xl" color={`mode.${colorMode}.text`}>
               {experience.company_name}
             </Heading>
-            <Heading fontSize="sm" color={`mode.${colorMode}.career.subtext`}>
+            <Heading fontSize="sm" color={`mode.${colorMode}.subtext`}>
               {experience.name}
             </Heading>
 
@@ -57,7 +56,7 @@ export const ExperienceCard: React.FC<ExperienceCardProps> = ({
           </Stack>
         </Flex>
         <Stack>
-          <Text fontSize={14} color={`mode.${colorMode}.career.subtext`}>
+          <Text fontSize={14} color={`mode.${colorMode}.subtext`}>
             {formatDistance(
               new Date(experience.start_date),
               new Date(experience.end_date)

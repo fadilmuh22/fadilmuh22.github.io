@@ -6,7 +6,6 @@ import {
   Stack,
   Text,
   useColorMode,
-  useColorModeValue,
 } from '@chakra-ui/react';
 import { EducationInterface } from 'src/interfaces/Education';
 import { TagList } from './TagList';
@@ -25,7 +24,7 @@ export const EducationCard: React.FC<ExperienceCardProps> = ({ education }) => {
       _hover={{ shadow: 'md' }}
       borderWidth="1px"
       borderColor={`mode.${colorMode}.border`}
-      bg={useColorModeValue('white', 'gray.800')}
+      bg={`mode.${colorMode}.background`}
       position="relative"
       rounded="md"
     >
@@ -40,10 +39,10 @@ export const EducationCard: React.FC<ExperienceCardProps> = ({ education }) => {
             alt={education.name}
           />
           <Stack spacing={2} pl={3}>
-            <Heading fontSize="xl" color={`mode.${colorMode}.career.text`}>
+            <Heading fontSize="xl" color={`mode.${colorMode}.text`}>
               {education.name}
             </Heading>
-            <Heading fontSize="sm" color={`mode.${colorMode}.career.subtext`}>
+            <Heading fontSize="sm" color={`mode.${colorMode}.subtext`}>
               {education.major}
             </Heading>
 
@@ -54,7 +53,7 @@ export const EducationCard: React.FC<ExperienceCardProps> = ({ education }) => {
           </Stack>
         </Flex>
         <Stack>
-          <Text fontSize={14} color={`mode.${colorMode}.career.subtext`}>
+          <Text fontSize={14} color={`mode.${colorMode}.subtext`}>
             {`${new Date(education.start_date).getFullYear()} - ${new Date(
               education.end_date
             ).getFullYear()}`}

@@ -14,15 +14,13 @@ export const SectionHeading: React.FC<SectionHeadingProps> = ({
   const { colorMode } = useColorMode();
 
   return (
-    <Heading color={`mode.${colorMode}.career.text`}>
+    <Heading color={`mode.${colorMode}.text`}>
       <Flex alignItems="center" gap={2}>
-        <Text as="span" color={`mode.${colorMode}.career.text`}>
+        <Text as="span" color={`mode.${colorMode}.text`}>
           {title}
         </Text>
         <Stack>
-          {Icon && (
-            <Icon size={size} color={`mode.${colorMode}.career.subtext`} />
-          )}
+          {Icon && <Icon size={size} color={`mode.${colorMode}.subtext`} />}
         </Stack>
       </Flex>
     </Heading>

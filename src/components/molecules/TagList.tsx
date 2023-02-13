@@ -17,7 +17,7 @@ export const TagList: React.FC<TagListProps> = ({ tags, display }) => {
             padding="0 3px"
             key={skill}
             fontWeight="bold"
-            color={`mode.${colorMode}.career.subtext`}
+            color={`mode.${colorMode}.subtext`}
             bgColor={`mode.${colorMode}.career.tagBG`}
           >
             {skill}
