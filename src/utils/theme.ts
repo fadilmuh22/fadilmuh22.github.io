@@ -38,6 +38,8 @@ export const myTheme = extendTheme({
         heading: '#102a43',
         icon: '#2d3748',
         link: '#9f00ff',
+        shadow:
+          '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
         career: {
           tagBG: '#82828218',
         },
@@ -58,6 +60,8 @@ export const myTheme = extendTheme({
         heading: '#ffffffde',
         icon: '#ffffffde',
         link: '#f8ccff',
+        shadow:
+          '0 4px 6px -1px rgba(113, 128, 150, 0.2), 0 2px 4px -1px rgba(113, 128, 150, 0.09)',
         career: {
           tagBG: '#edf2f729',
         },

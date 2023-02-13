@@ -24,7 +24,7 @@ export const ExperienceCard: React.FC<ExperienceCardProps> = ({
     <Box
       paddingX={4}
       paddingY={5}
-      _hover={{ shadow: 'md' }}
+      _hover={{ boxShadow: `var(--chakra-colors-mode-${colorMode}-shadow)` }}
       borderWidth="1px"
       borderColor={`mode.${colorMode}.border`}
       bg={`mode.${colorMode}.background`}
