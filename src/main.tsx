@@ -11,6 +11,7 @@ import { HomePage } from './pages/HomePage';
 import { createClient } from '@supabase/supabase-js';
 import { Provider } from 'react-supabase';
 import './index.css';
+import { MyBeloved } from './pages/MyBeloved';
 import { ProjectsPage } from './pages/ProjectsPage';
 import { myTheme } from './utils/theme';
 
@@ -30,6 +31,7 @@ export const router = createHashRouter([
       { path: 'articles', element: <ArticlesPage /> },
     ],
   },
+  { path: 'my-beloved', element: <MyBeloved /> },
 ]);
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(

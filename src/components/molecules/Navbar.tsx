@@ -13,7 +13,7 @@ import { NavbarLink } from '../atoms/NavbarLink';
 export const Navbar = () => {
   const [show, setShow] = useState(false);
   const handleToggle = () => setShow((s) => !s);
-  const { colorMode, toggleColorMode } = useColorMode();
+  const { toggleColorMode } = useColorMode();
 
   return (
     <Flex
