@@ -35,7 +35,10 @@ export const Navbar = () => {
       >
         <Box></Box>
         <Box display={{ sm: 'block', md: 'none' }} onClick={handleToggle}>
-          <FiMenu fontSize="2.5rem" color={`mode.${colorMode}.text`} />
+          <FiMenu
+            fontSize="2.5rem"
+            color={useColorModeValue('#2D3748', '#ffffffde')}
+          />
         </Box>
       </Flex>
 
