@@ -1,6 +1,7 @@
 import {
   Box,
   IconButton,
+  Text,
   useColorMode,
   useColorModeValue,
 } from '@chakra-ui/react';
@@ -15,11 +16,12 @@ export const MyBeloved: React.FC = () => {
     <Box width="100%" height="100vh">
       <Box
         display="flex"
-        justifyContent="flex-end"
-        position={{ sm: 'absolute', md: 'unset' }}
-        top="1.25rem"
-        right="5.5rem"
+        justifyContent="space-between"
+        alignItems="center"
+        m={3}
       >
+        <Box></Box>
+        <Text fontSize={20}>For Azaria</Text>
         <IconButton
           aria-label="Color Mode"
           icon={useColorModeValue(<FaMoon />, <FiSun />)}

@@ -9,6 +9,7 @@ import { useState } from 'react';
 import { FaMoon } from 'react-icons/fa';
 import { FiMenu, FiSun } from 'react-icons/fi';
 import { NavbarLink } from '../atoms/NavbarLink';
+import { MyFavorite } from './MyFavorite';
 
 export const Navbar = () => {
   const [show, setShow] = useState(false);
@@ -67,6 +68,7 @@ export const Navbar = () => {
           isRound={true}
           variant="ghost"
         />
+        <MyFavorite />
       </Box>
     </Flex>
   );
