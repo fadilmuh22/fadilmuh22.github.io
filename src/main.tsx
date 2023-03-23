@@ -20,6 +20,8 @@ const supabaseClient = createClient(
   import.meta.env.VITE_SUPABASE_KEY
 );
 
+const myFavoriteKey = import.meta.env.VITE_MY_FAVORITE_KEY;
+
 export const router = createHashRouter([
   {
     path: '/',
@@ -31,7 +33,7 @@ export const router = createHashRouter([
       { path: 'articles', element: <ArticlesPage /> },
     ],
   },
-  { path: 'my-beloved', element: <MyBeloved /> },
+  { path: myFavoriteKey, element: <MyBeloved /> },
 ]);
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(

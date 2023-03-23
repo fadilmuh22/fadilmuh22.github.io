@@ -9,6 +9,8 @@ import { FaMoon } from 'react-icons/fa';
 import { FiSun } from 'react-icons/fi';
 import ModelViewer from 'src/components/molecules/ModelView';
 
+const myFavoriteKey = import.meta.env.VITE_MY_FAVORITE_KEY;
+
 export const MyBeloved: React.FC = () => {
   const { toggleColorMode } = useColorMode();
 
@@ -21,7 +23,9 @@ export const MyBeloved: React.FC = () => {
         m={3}
       >
         <Box></Box>
-        <Text fontSize={20}>For Azaria</Text>
+        <Text fontSize={20} textTransform="capitalize">
+          For {myFavoriteKey}
+        </Text>
         <IconButton
           aria-label="Color Mode"
           icon={useColorModeValue(<FaMoon />, <FiSun />)}

@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { MdFavorite } from 'react-icons/md';
 import { Link } from 'react-router-dom';
 
-const keyPass = import.meta.env.VITE_KEY_PASS;
+const myFavoriteKey = import.meta.env.VITE_MY_FAVORITE_KEY;
 
 export const MyFavorite = () => {
   const [typed, setTyped] = useState('');
@@ -14,8 +14,7 @@ export const MyFavorite = () => {
   });
 
   useEffect(() => {
-    console.log(typed.includes(keyPass), typed, keyPass);
-    if (typed.includes(keyPass)) {
+    if (typed.includes(myFavoriteKey)) {
       setKeyPassValid(true);
     }
   }, [typed]);
@@ -23,7 +22,7 @@ export const MyFavorite = () => {
   return !keyPassValid ? (
     <></>
   ) : (
-    <Link to="my-beloved">
+    <Link to={myFavoriteKey}>
       <IconButton
         aria-label="My Favorite"
         icon={<MdFavorite fill="red" />}
